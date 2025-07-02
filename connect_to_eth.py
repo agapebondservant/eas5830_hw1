@@ -27,7 +27,8 @@ def connect_with_middleware(contract_json):
 
     # TODO complete this method
     # The first section will be the same as "connect_to_eth()" but with a BNB url
-    url = "https://opbnb-mainnet.infura.io/v3/af83c96cc0ff485bb901f9ed92726df3"
+    # url = "https://opbnb-mainnet.infura.io/v3/af83c96cc0ff485bb901f9ed92726df3"
+    url = "https://bsc-mainnet.infura.io/v3/af83c96cc0ff485bb901f9ed92726df3"
     w3 = Web3(HTTPProvider(url))
     assert w3.is_connected(), f"Failed to connect to provider via middleware at {url}"
 
