@@ -18,7 +18,7 @@ def connect_to_eth():
 
 
 def connect_with_middleware(contract_json):
-  address, abi = None, None
+    address, abi = None, None
     with open(contract_json, "r") as f:
         d = json.load(f)
         d = d['bsc']
@@ -27,9 +27,9 @@ def connect_with_middleware(contract_json):
 
     # TODO complete this method
     # The first section will be the same as "connect_to_eth()" but with a BNB url
-  url = "https://opbnb-mainnet.infura.io/v3/af83c96cc0ff485bb901f9ed92726df3"
-  w3 = Web3(HTTPProvider(url))
-  assert w3.is_connected(), f"Failed to connect to provider via middleware at {url}"
+    url = "https://opbnb-mainnet.infura.io/v3/af83c96cc0ff485bb901f9ed92726df3"
+    w3 = Web3(HTTPProvider(url))
+    assert w3.is_connected(), f"Failed to connect to provider via middleware at {url}"
 
     # The second section requires you to inject middleware into your w3 object and
     # create a contract object. Read more on the docs pages at https://web3py.readthedocs.io/en/stable/middleware.html
