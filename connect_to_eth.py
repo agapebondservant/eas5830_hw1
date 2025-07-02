@@ -26,6 +26,7 @@ def connect_with_middleware(contract_json):
         abi = d['abi']
 
     # TODO complete this method
+
     # The first section will be the same as "connect_to_eth()" but with a BNB url
     url = "https://opbnb-testnet.infura.io/v3/af83c96cc0ff485bb901f9ed92726df3"
     # url = "https://bsc-mainnet.infura.io/v3/af83c96cc0ff485bb901f9ed92726df3"
@@ -35,7 +36,8 @@ def connect_with_middleware(contract_json):
     # The second section requires you to inject middleware into your w3 object and
     # create a contract object. Read more on the docs pages at https://web3py.readthedocs.io/en/stable/middleware.html
     # and https://web3py.readthedocs.io/en/stable/web3.contract.html
-    w3.middleware_onion.add(web3.middleware.GasPriceStrategyMiddleware)
+    w3.middleware_onion.add(connect_to_eth().middleware)
+
     contract = w3.eth.contract(address=address, abi=abi)
 
     return w3, contract
